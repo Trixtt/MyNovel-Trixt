@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyNovel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="images/Logo.jpeg" alt="logo" class="logo">
+    <h1 class="site-title"><span class="my">My</span><span class="novel">Novel</span></h1>
+    <nav class="main-nav">
+      <a href="#home" onclick="navigate('home')">Home</a>
+      <a href="#catalog" onclick="navigate('catalog')">Catalog & Genre</a>
+      <a href="#favorit" onclick="navigate('favorit')">Favorit</a>
+      <a href="#pesan" onclick="navigate('pesan')">Pesan</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <h2>Favorit Pilihan</h2>
+    <div class="favorites-scroll">
+      <div class="favorites" id="favorites"></div>
+    </div>
+
+    <h2>Rekomendasi Terbaru</h2>
+    <div id="home-grid" class="grid catalog-grid"></div>
+  </section>
+
+  <!-- CATALOG -->
+  <section id="catalog" class="page">
+    <h2>Katalog & Genre</h2>
+    <div class="genre-buttons" id="genre-buttons"></div>
+    <div id="catalog-grid" class="grid catalog-grid"></div>
+  </section>
+
+  <!-- FAVORIT -->
+  <section id="favorit" class="page">
+    <h2>10 Novel Teratas</h2>
+    <div id="favorit-grid" class="grid catalog-grid"></div>
+  </section>
+
+  <!-- DETAIL -->
+  <section id="detail" class="page">
+    <button id="detail-back" class="btn back-btn">← Kembali</button>
+    <div id="detail-content"></div>
+  </section>
+
+  <!-- PESAN -->
+  <section id="pesan" class="page">
+    <div class="container">
+      <h2>Pesan Novel</h2>
+      <p>Isi data diri dan detail pemesanan novel di bawah ini:</p>
+      
+      <form id="form-pesan" class="form-pesan">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Nama Anda" required>
+
+        <label>Nomor WhatsApp</label>
+        <input type="text" id="wa" placeholder="08xxxxxx" required>
+
+        <label>Alamat Lengkap</label>
+        <textarea id="alamat" rows="3" placeholder="Alamat lengkap pengiriman" required></textarea>
+
+        <label>Pilih Novel</label>
+        <select id="pilih-novel" required>
+          <option value="">-- Pilih Novel --</option>
+        </select>
+
+        <label>Jumlah</label>
+        <input type="number" id="jumlah" min="1" value="1" required>
+
+        <button type="submit" class="btn-pesan">Lihat Struk Pesanan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- STRUK PESANAN -->
+  <section id="struk" class="page">
+    <div class="container struk-container">
+      <h2>Struk Pemesanan</h2>
+      <div id="struk-detail"></div>
+      <button class="btn back-btn" onclick="navigate('pesan')">← Kembali</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
