@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Owlvel - Trixt</title>
+<title>Owlvel - Platform Katalog & Rekomendasi Novel</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,9 +13,12 @@
   <div class="header-inner">
     <img src="images/Logo.jpeg" alt="logo" class="logo">
     <h1 class="site-title"><span class="my">Owl</span><span class="novel">vel</span></h1>
-    <nav class="main-nav">
+
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <nav class="main-nav" id="main-nav">
       <a href="#home" onclick="navigate('home')">Home</a>
-      <a href="#catalog" onclick="navigate('catalog')">Catalog & Genre</a>
+      <a href="#catalog" onclick="navigate('catalog')">Catalog</a>
       <a href="#favorit" onclick="navigate('favorit')">Favorit</a>
       <a href="#pesan" onclick="navigate('pesan')">Pesan</a>
     </nav>
@@ -90,7 +93,6 @@
       <button class="btn back-btn" onclick="navigate('pesan')">← Kembali</button>
     </div>
   </section>
-
 </main>
 
 <script src="script.js"></script>

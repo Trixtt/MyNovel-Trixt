@@ -27,7 +27,7 @@ function init(){
   populateNovelDropdown();
 }
 
-// === GRID CARD ===
+// === RENDER GRID ===
 function renderGrid(id, list){
   const container = document.getElementById(id);
   container.innerHTML = '';
@@ -49,7 +49,7 @@ function renderGrid(id, list){
   });
 }
 
-// === DETAIL NOVEL ===
+// === DETAIL ===
 function openDetail(id){
   const n = novels.find(x => x.id === id);
   const cont = document.getElementById('detail-content');
@@ -76,7 +76,7 @@ function navigate(page){
   window.location.hash = page;
 }
 
-// === GENRE & DROPDOWN ===
+// === GENRE ===
 function renderGenreButtons(){
   const genres = [...new Set(novels.map(n=>n.genre))];
   const wrap = document.getElementById('genre-buttons');
@@ -106,9 +106,13 @@ function pesanLangsung(judul){
   window.scrollTo(0,0);
 }
 
-// === FORM & STRUK ===
+// === FORM PESAN ===
 document.addEventListener('DOMContentLoaded', ()=>{
   init();
+  document.getElementById('menu-toggle').addEventListener('click', ()=>{
+    document.getElementById('main-nav').classList.toggle('active');
+  });
+
   document.getElementById('detail-back').addEventListener('click', ()=>navigate('catalog'));
 
   document.getElementById('form-pesan').addEventListener('submit', e=>{
@@ -132,7 +136,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         <p><strong>Harga Satuan:</strong> Rp ${item.price.toLocaleString()}</p>
         <p><strong>Total Bayar:</strong> Rp ${total.toLocaleString()}</p>
         <hr>
-        <p>Silakan kirim pesanan Anda ke <strong>WhatsApp Admin</strong>:</p>
+        <p>Silakan kirim pesanan ke <strong>WhatsApp Admin</strong>:</p>
         <a href="https://wa.me/${nomorWA}?text=Halo, saya ingin memesan novel *${novel}* sebanyak ${jumlah} pcs. Nama saya ${nama}, nomor saya ${wa}, alamat ${alamat}. Total: Rp ${total.toLocaleString()}." 
            target="_blank" class="btn-wa">Kirim ke WhatsApp Admin</a>
       </div>`;
