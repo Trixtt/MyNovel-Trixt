@@ -49,7 +49,6 @@ function renderGrid(id, list){
   });
 }
 
-// === DETAIL ===
 function openDetail(id){
   const n = novels.find(x => x.id === id);
   const cont = document.getElementById('detail-content');
@@ -61,12 +60,15 @@ function openDetail(id){
         <p><strong>Penulis:</strong> ${n.author}</p>
         <p><strong>Genre:</strong> ${n.genre}</p>
         <p><strong>Harga:</strong> Rp ${n.price.toLocaleString()}</p>
-        <p>${n.synopsis}</p>
+        <p class="synopsis">${n.synopsis}</p>
         <button class="btn" onclick="pesanLangsung('${n.title}')">Pesan Sekarang</button>
+        <button class="btn back-btn" onclick="navigate('catalog')">← Kembali</button>
       </div>
     </div>`;
+
   navigate('detail');
 }
+
 
 // === NAVIGASI ===
 function navigate(page){

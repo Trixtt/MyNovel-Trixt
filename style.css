@@ -59,6 +59,147 @@ header {
   cursor: pointer;
 }
 
+/* === DETAIL PAGE === */
+#detail {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  gap: 30px;
+}
+
+.detail img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.detail-meta {
+  flex: 1;
+  min-width: 260px;
+}
+
+.detail-meta h2 {
+  color: #2c003e;
+  margin-bottom: 10px;
+}
+
+.detail-meta p {
+  margin-bottom: 8px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.detail-meta strong {
+  color: #3b0066;
+}
+
+.detail-meta .btn {
+  margin-top: 10px;
+}
+
+/* Responsif agar tetap bagus di HP */
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detail img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .detail-meta {
+    width: 100%;
+  }
+}
+
+/* === DETAIL (DIPERBARUI) === */
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.detail img {
+  max-width: 280px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-meta {
+  max-width: 500px;
+  text-align: left;
+}
+
+.detail-meta h2 {
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  color: var(--blue);
+}
+
+.detail-meta p {
+  margin: 6px 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Tombol kembali di bawah container */
+.back-btn {
+  background-color: var(--green);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease, transform 0.2s;
+  margin: 28px auto 0;
+  display: block;
+}
+
+.back-btn:hover {
+  background-color: var(--blue);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .detail-meta {
+    text-align: center;
+  }
+}
+
 /* RESPONSIVE NAV */
 @media(max-width:768px){
   .menu-toggle { display: block; }
